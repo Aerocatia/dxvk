@@ -107,6 +107,9 @@ namespace dxvk {
     YV12 = MAKEFOURCC('Y', 'V', '1', '2'),
     OPAQUE_420 = MAKEFOURCC('4', '2', '0', 'O'),
 
+    // Aerocatia: BC7 for Halo CE
+    BC7 = MAKEFOURCC('B', 'C', '7', ' '),
+
     // Not supported but exist
     AI44 = MAKEFOURCC('A', 'I', '4', '4'),
     IA44 = MAKEFOURCC('I', 'A', '4', '4'),
@@ -263,6 +266,7 @@ namespace dxvk {
       case D3D9Format::DXT3:
       case D3D9Format::DXT4:
       case D3D9Format::DXT5:
+      case D3D9Format::BC7: // Aerocatia: lie
         return false;
       default:
         return IsFourCCFormat(format);
