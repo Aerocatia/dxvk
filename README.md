@@ -1,3 +1,14 @@
+# d3d9-bc7
+
+This is a mod of DXVK that exposes the BC7 texture format through d3d9.
+
+This allows the use of BC7 format textures in game mods without having to change the renderer to use a newer graphics API that provides native support.
+
+
+The format is exposed with the custom FourCC `'BC7 '` (0x20374342) and can be tested for with `IDirect3D9::CheckDeviceFormat`.
+
+The original readme is as follows:
+
 # DXVK
 
 A Vulkan-based translation layer for Direct3D 8/9/10/11 which allows running 3D applications on Linux using Wine.
@@ -32,7 +43,7 @@ In order to remove DXVK from a prefix, remove the DLLs and DLL overrides, and ru
 
 Tools such as Steam Play, Lutris, Bottles, Heroic Launcher, etc will automatically handle setup of dxvk on their own when enabled.
 
-#### DLL dependencies 
+#### DLL dependencies
 Listed below are the DLL requirements for using DXVK with any single API.
 
 - d3d8: `d3d8.dll` and `d3d9.dll`
@@ -159,10 +170,10 @@ update-alternatives --config x86_64-w64-mingw32-g++
 update-alternatives --config i686-w64-mingw32-gcc
 update-alternatives --config i686-w64-mingw32-g++
 ```
-For non debian based distros, make sure that your mingw-w64-gcc cross compiler 
+For non debian based distros, make sure that your mingw-w64-gcc cross compiler
 does have `--enable-threads=posix` enabled during configure. If your distro does
 ship its mingw-w64-gcc binary with `--enable-threads=win32` you might have to
-recompile locally or open a bug at your distro's bugtracker to ask for it. 
+recompile locally or open a bug at your distro's bugtracker to ask for it.
 
 # DXVK Native
 
